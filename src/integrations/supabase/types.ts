@@ -1904,7 +1904,7 @@ export type Database = {
         Args: {
           p_age?: number
           p_category_id?: string
-          p_email: string
+          p_email?: string
           p_height?: string
           p_image_url?: string
           p_jersey_number?: string
