@@ -373,7 +373,7 @@ export function AddPlayerModal({ isOpen, onClose, onAdd, categoryId, seniorCateg
           position: player.position,
           jersey_number: player.jersey_number,
           id: initialData.id,
-          category_id: player.category_id,
+          category_id: player.category_id || null,
           image_url: updatedPlayer?.image_url ? `${updatedPlayer.image_url}?v=${cacheVersion}` : null
         } as unknown as Player);
       } else if (!isEditing) {

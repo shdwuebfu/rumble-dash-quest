@@ -453,9 +453,16 @@ export default function Dashboard() {
 
   const handleEditPlayer = async (playerData: any) => {
     try {
+      // Convertir cadenas vacías a null para campos UUID
+      const cleanedData = {
+        ...playerData,
+        category_id: playerData.category_id || null,
+        senior_category_id: playerData.senior_category_id || null
+      };
+      
       const { error } = await supabase
         .from("players")
-        .update(playerData)
+        .update(cleanedData)
         .eq('id', playerData.id);
 
       if (error) throw error;
